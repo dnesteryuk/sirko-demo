@@ -1,0 +1,16 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Sirko Demo</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <% pages.each do |page| %>
+          <li class="<%= 'active' if page == active_page %>">
+            <a href="/<%= page %>"><%= page %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

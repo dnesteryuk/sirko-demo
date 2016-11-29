@@ -1,0 +1,14 @@
+<% portfolio_imgs.each do |portfolio_img| %>
+  <div class="portfolio-item graphic-design">
+    <div class="he-wrap tpl6">
+    <img src="assets/img/portfolio/<%= portfolio_img %>" alt="">
+      <div class="he-view">
+        <div class="bg a0" data-animate="fadeIn">
+          <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+          <a data-rel="prettyPhoto" href="assets/img/portfolio/<%= portfolio_img %>" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+          <a href="/project" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
