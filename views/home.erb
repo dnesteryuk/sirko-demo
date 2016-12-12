@@ -2,13 +2,21 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <h3>Show how the Chrome pre-render feature and the sirko engine can provide better experience to users</h3>
+        <h3>
+          Show how the Chrome pre-render feature and <a href="https://github.com/dnesteryuk/sirko-engine">the sirko engine</a>
+          can provide better experience to users
+        </h3>
+
         <br>
         <h4>
           This demo site is static, but the backend simulates some work in order to slow this site down.
-          If you follow the given prediction, you should see the instant load of pages. Otherwise,
+          If you follow the given prediction below, you should see the instant load of pages. Otherwise,
           it will take time to show the content to you.
         </h4>
+
+        <h3>
+          Predicted path: <a id="predicted_path">no prediction yet</a>
+        </h3>
       </div>
     </div>
   </div>
@@ -39,19 +47,15 @@
   </div>
 </div>
 
-<div id="portfoliowrap">
-  <h3>LATEST WORKS</h3>
+<div class="container">
+  <h3>Random video</h3>
 
-  <div class="portfolio-centered">
-    <div class="recentitems portfolio">
-      <%= erb 'partials/portfolio'.to_sym %>
-    </div>
-  </div>
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/<%= random_youtube_code %>" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="container mtb">
   <div class="row">
-    <div class="col-lg-4 col-lg-offset-1">
+    <div class="col-lg-6">
       <h4>More About Our Agency.</h4>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
       <p><br/><a href="/about" class="btn btn-theme">More Info</a></p>
@@ -83,4 +87,3 @@
 <%= erb 'partials/testimonial'.to_sym %>
 <%= erb 'partials/footer'.to_sym %>
 <%= erb 'partials/scripts'.to_sym %>
-<%= erb 'partials/portfolio_script'.to_sym %>

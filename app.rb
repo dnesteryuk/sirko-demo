@@ -1,26 +1,44 @@
 require 'sinatra'
 require 'faker'
+require 'dotenv'
+
+Dotenv.load
 
 set :public_folder, Proc.new { File.join(root, 'public') }
 
+set :youtube_video_codes, [
+  'A60nxws_iVs',
+  'iJ9hS54BRag',
+  'U8ZGVx1NmQg',
+  '1l3U1X3z0CE',
+  'xMFs9DTympQ',
+  'mjzmUUQWqco',
+  'U2kCjkxPMuM',
+  '6t2JRKTCYbI',
+  'M2muJu-FQfI',
+  'OxhTQdcieQE'
+]
+
 helpers do
   def pages
-    %w(home about contact blog portfolio project)
+    %w(home about contact blog video project)
   end
 
-  def portfolio_imgs
-    Dir[settings.public_folder + "/assets/img/portfolio/*.jpg"].map do |file|
-      File.basename file
-    end
+  def random_youtube_code
+    settings.youtube_video_codes.sample
+  end
+
+  def random_youtube_codes(count = 3)
+    settings.youtube_video_codes.shuffle.take(count)
+  end
+
+  def sirko_engine_url
+    ENV.fetch('SIRKO_ENGINE_URL')
   end
 end
 
 get '/' do
   redirect '/home'
-end
-
-get '/assets/*' do |path|
-  File.read("#{settings.public_folder}/assets/#{path}")
 end
 
 get '/:page' do |page|
