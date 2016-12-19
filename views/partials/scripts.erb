@@ -1,14 +1,13 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/sirko/dist/sirko.js"></script>
 
 <script>
   $(function() {
-    Sirko.predict(
-      '<%= sirko_engine_url %>',
-      '<%= request.referrer %>'
-    );
-
+    /**
+     * the code below shows a predicted path in a link once the sirko client
+     * gets the prediction. Doing that, the user can follow the predicted path
+     * in order to see how the pre-rendering feature is useful.
+     */
     var a = document.getElementById('predicted_path');
 
     var observer = new MutationObserver(function() {

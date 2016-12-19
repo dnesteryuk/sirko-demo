@@ -1,5 +1,5 @@
 {
-  "name": "Siro demo",
+  "name": "Sirko demo",
   "dependencies": {
     "sirko": "https://github.com/dnesteryuk/sirko-client.git",
     "bootstrap": "^3.3.7",
