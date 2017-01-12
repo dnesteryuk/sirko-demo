@@ -32,8 +32,16 @@ helpers do
     settings.youtube_video_codes.shuffle.take(count)
   end
 
+  def random_avatars
+    (1..4).to_a.shuffle.map { |n| "avatar#{n}.png" }
+  end
+
   def sirko_engine_url
     ENV.fetch('SIRKO_ENGINE_URL')
+  end
+
+  def ga_tracking_id
+    ENV.fetch('GA_TRACKING_ID')
   end
 end
 

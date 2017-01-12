@@ -18,10 +18,10 @@
   <div class="row centered">
     <h3 class="mb">MEET OUR TEAM</h3>
 
-    <% 4.times do %>
+    <% random_avatars.each do |avatar| %>
       <div class="col-lg-3 col-md-3 col-sm-3">
         <div class="he-wrap tpl6">
-          <img src="<%= Faker::Avatar.image %>" alt="">
+          <img src="assets/img/avatars/<%= avatar %>" alt="">
           <div class="he-view">
             <div class="bg a0" data-animate="fadeIn">
               <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <h4><%= Faker::Name.name %></h4>
-        <h5 class="ctitle"><%= Faker::Name.title  %></h5>
+        <h5 class="ctitle"><%= Faker::Name.title %></h5>
         <p><%= Faker::Lorem.paragraph %></p>
       </div>
     <% end %>
