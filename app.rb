@@ -41,7 +41,7 @@ helpers do
   end
 
   def ga_tracking_id
-    ENV.fetch('GA_TRACKING_ID')
+    ENV['GA_TRACKING_ID']
   end
 end
 
