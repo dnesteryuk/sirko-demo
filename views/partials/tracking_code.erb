@@ -4,7 +4,7 @@
   sirko.r='<%= request.referrer %>';
 </script>
 
-<script async src="bower_components/sirko/dist/sirko.js"></script>
+<script async src="<%= sirko_engine_url %>/assets/client.js"></script>
 
 <% if ga_tracking_id %>
   <script>
