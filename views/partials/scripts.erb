@@ -8,20 +8,12 @@
      * gets the prediction. Doing that, the user can follow the predicted path
      * in order to see how the pre-rendering feature is useful.
      */
-    var a = document.getElementById('predicted_path');
+    var predictedPath = sessionStorage.getItem('lastPrediction');
 
-    var observer = new MutationObserver(function() {
-      var link = document.querySelector('link[rel="prerender"]');
-
-      if (link) {
-        a.setAttribute('href', link.href);
-        a.innerHTML = link.getAttribute('href');
-      }
-    });
-
-    observer.observe(
-      document.querySelector('head'),
-      { attributes: true, childList: true, characterData: true }
-    );
+    if (predictedPath) {
+      var a = document.getElementById('predicted_path');
+      a.setAttribute('href', predictedPath);
+      a.innerHTML = predictedPath;
+    }
   });
 </script>
