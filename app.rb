@@ -43,6 +43,10 @@ helpers do
   def ga_tracking_id
     ENV['GA_TRACKING_ID']
   end
+
+  def mixpanel_token
+    ENV['MIXPANEL_TOKEN']
+  end
 end
 
 get '/' do
