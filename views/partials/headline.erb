@@ -8,6 +8,9 @@
         <h3>
           Predicted path: <a id="predicted_path">no prediction yet</a>
         </h3>
+        <% if digitalocean_url %>
+          This demo is hosted by <a href="<%= digitalocean_url %>">DigitalOcean</a>
+        <% end %>
       </div>
     </div>
   </div>

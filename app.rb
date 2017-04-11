@@ -40,6 +40,10 @@ helpers do
     ENV.fetch('SIRKO_ENGINE_URL')
   end
 
+  def digitalocean_url
+    ENV['DIGITALOCEAN_URL']
+  end
+
   def ga_tracking_id
     ENV['GA_TRACKING_ID']
   end
