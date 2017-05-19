@@ -66,6 +66,12 @@ get '/' do
   redirect '/home'
 end
 
+get '/sirko_sw.js' do
+  content_type 'application/javascript'
+
+  File.read('public/assets/sirko_sw.js')
+end
+
 get '/message' do
   render_page('message', message: session[:message])
 end
