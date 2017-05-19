@@ -19,6 +19,8 @@ set :youtube_video_codes, [
   'OxhTQdcieQE'
 ]
 
+enable :sessions
+
 helpers do
   def pages
     %w(home about contact blog video project)
@@ -53,13 +55,27 @@ helpers do
   end
 end
 
+def render_page(page, locals = {})
+  # let's simulate some work on the backend
+  sleep 0.5
+
+  erb page.to_sym, layout: :layout, locals: locals.merge!( active_page: page )
+end
+
 get '/' do
   redirect '/home'
 end
 
-get '/:page' do |page|
-  # let's simulate some work on the backend
-  sleep 0.5
+get '/message' do
+  render_page('message', message: session[:message])
+end
 
-  erb page.to_sym, layout: :layout, locals: { active_page: page }
+get '/:page' do |page|
+  render_page(page)
+end
+
+post '/contact' do
+  session[:message] = params[:message]
+
+  redirect '/message'
 end

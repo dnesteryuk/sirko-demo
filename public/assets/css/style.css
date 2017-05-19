@@ -16,7 +16,7 @@ body {
   color: #384452;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  }
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
@@ -201,7 +201,7 @@ a:focus {
   text-align: center;
 }
 
-#headerwrap h3, h4, h5 {
+#headerwrap h3, #headerwrap h4, #headerwrap h5 {
   color: white;
   font-weight: 400;
 }
