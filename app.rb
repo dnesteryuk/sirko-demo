@@ -19,6 +19,10 @@ set :youtube_video_codes, [
 
 set :delays, (5..10).to_a.map{|n| n.to_f / 10}
 
+set :project_imgs, Proc.new { read_imgs('/assets/img/project/') }
+
+set :about_imgs, Proc.new { read_imgs('/assets/img/about/') }
+
 enable :sessions
 
 helpers do
@@ -32,6 +36,14 @@ helpers do
 
   def random_youtube_codes(count = 3)
     settings.youtube_video_codes.shuffle.take(count)
+  end
+
+  def random_project_imgs(count = 3)
+    settings.project_imgs.shuffle.take(count)
+  end
+
+  def random_about_img
+    settings.about_imgs.sample
   end
 
   def random_avatars
@@ -60,6 +72,14 @@ def render_page(page, locals = {})
   sleep settings.delays.sample
 
   erb page.to_sym, layout: :layout, locals: locals.merge!( active_page: page )
+end
+
+def dir_children(path)
+  Dir.entries(path) - ['.', '..']
+end
+
+def read_imgs(path)
+  dir_children("#{public_folder}/#{path}").map { |name| path + name }
 end
 
 get '/' do
