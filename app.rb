@@ -7,17 +7,17 @@ Dotenv.load
 set :public_folder, Proc.new { File.join(root, 'public') }
 
 set :youtube_video_codes, [
-  'A60nxws_iVs',
-  'iJ9hS54BRag',
-  'U8ZGVx1NmQg',
-  '1l3U1X3z0CE',
-  'xMFs9DTympQ',
-  'mjzmUUQWqco',
-  'U2kCjkxPMuM',
-  '6t2JRKTCYbI',
-  'M2muJu-FQfI',
-  'OxhTQdcieQE'
+  'Wa7_I_pc0yo',
+  'nyJSd6V2DRI',
+  'UmBP-jz7CBc',
+  'Cx6aGMC6MjU',
+  'DKHuEkmsx3M',
+  'HktWin_LPf4',
+  '4q3sycRJ5bs',
+  'zbbK0WOvWII'
 ]
+
+set :delays, (5..10).to_a.map{|n| n.to_f / 10}
 
 enable :sessions
 
@@ -57,7 +57,7 @@ end
 
 def render_page(page, locals = {})
   # let's simulate some work on the backend
-  sleep 0.5
+  sleep settings.delays.sample
 
   erb page.to_sym, layout: :layout, locals: locals.merge!( active_page: page )
 end

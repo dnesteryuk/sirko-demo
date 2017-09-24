@@ -12,13 +12,13 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <img src="assets/img/portfolio/single01.jpg" alt="">
+            <img src="<%= Faker::LoremPixel.image('945x442', false, 'abstract') %>" alt="">
           </div>
           <div class="item">
-            <img src="assets/img/portfolio/single02.jpg" alt="">
+            <img src="<%= Faker::LoremPixel.image('945x442', false, 'food') %>" alt="">
           </div>
           <div class="item">
-            <img src="assets/img/portfolio/single03.jpg" alt="">
+            <img src="<%= Faker::LoremPixel.image('945x442', false, 'animals') %>" alt="">
           </div>
         </div>
       </div>
@@ -26,10 +26,10 @@
 
     <div class="col-lg-5 col-lg-offset-1">
       <div class="spacing"></div>
-      <h4>YOUR PROJECT NAME</h4>
+      <h4><%= Faker::StarWars.character %></h4>
       <p><%= Faker::Lorem.paragraph(50) %></p>
-      <h4>Our Proposal</h4>
-      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <h4><%= Faker::StarWars.character %></h4>
+      <p><%= Faker::Lorem.paragraph(20) %></p>
     </div>
 
     <div class="col-lg-4 col-lg-offset-1">

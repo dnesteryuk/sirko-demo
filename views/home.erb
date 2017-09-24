@@ -1,7 +1,7 @@
 <div id="headerwrap">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
+      <div class="col-lg-10 col-lg-offset-1">
         <h3>
           Show how <a href="https://github.com/sirko-io/engine">Sirko Engine</a>
           can provide better experience to users by using <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App features</a>
@@ -10,13 +10,15 @@
         <br>
 
         <h4>
-          This demo site is static, but it tries to pretend that there is some work on the backend and some parts of the site are dynamic.
-          If you follow the given prediction below, you will see the improved load of a page. Otherwise,
-          it will take time to show the content to you.
+          This demo site is static, but it tries to pretend that there is some work on the backend and it is dynamic.
+
+          If you follow the given prediction below, you will see the improved page load. Otherwise,
+          it will take time (0.5-1 sec) to show content to you.
+
+          If you want to inspect response time, you can install a <a href="https://chrome.google.com/webstore/detail/page-load-time/fploionmjgeclbkemipmkogoaohcdbig" target="_blank">page load time</a> Chrome extension or open <a href="https://developer.chrome.com/devtools" target="_blank">Dev Tools</a>.
         </h4>
         <h4>
-          <b>Before clicking on the link below, give the browser some time (1-2 secs) to perform required actions (prefetch a predicted page and assets for it).
-          Otherwise, you won't see any affect of pre-rendering.</b>
+          <b>Before clicking on the link below, give the browser some time (1-2 secs) to perform required actions (prefetch a predicted page and assets for it). Otherwise, you won't see any affect.</b>
         </h4>
 
         <h3>
@@ -32,21 +34,21 @@
     <div class="row centered">
       <div class="col-md-4">
         <i class="fa fa-heart-o"></i>
-        <h4>Handsomely Crafted</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        <h4><%= Faker::HarryPotter.book %></h4>
+        <p><%= Faker::HarryPotter.quote %></p>
+        <p><%= Faker::HarryPotter.quote %></p>
       </div>
       <div class="col-md-4">
         <i class="fa fa-flask"></i>
-        <h4>Retina Ready</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        <h4><%= Faker::HeyArnold.character %></h4>
+        <p><%= Faker::HeyArnold.quote %></p>
+        <p><%= Faker::HeyArnold.quote %></p>
       </div>
       <div class="col-md-4">
         <i class="fa fa-trophy"></i>
-        <h4>Quality Theme</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        <h4><%= Faker::StarWars.character %></h4>
+        <p><%= Faker::StarWars.quote %></p>
+        <p><%= Faker::StarWars.quote %></p>
       </div>
     </div>
   </div>
