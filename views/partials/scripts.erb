@@ -11,7 +11,7 @@
     var printPrediction = function(prediction) {
       var a = document.getElementById('predicted_path');
 
-      if (prediction !== '') {
+      if (prediction) {
         a.setAttribute('href', prediction);
         a.innerHTML = prediction;
       }

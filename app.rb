@@ -27,7 +27,7 @@ enable :sessions
 
 helpers do
   def pages
-    %w(home about contact blog video project)
+    %w[home about contact blog video project]
   end
 
   def random_youtube_code
@@ -96,6 +96,10 @@ get '/message' do
   render_page('message', message: session[:message])
 end
 
+get '/post' do
+  render_page('post', comment: nil)
+end
+
 get '/:page' do |page|
   render_page(page)
 end
@@ -104,4 +108,8 @@ post '/contact' do
   session[:message] = params[:message]
 
   redirect '/message'
+end
+
+post '/comment' do
+  render_page('post', comment: params[:comment])
 end
