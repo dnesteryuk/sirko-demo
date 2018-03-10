@@ -1,7 +1,7 @@
 # Sirko demo
 
-It is a simple demo site which shows how the [sirko engine](https://github.com/dnesteryuk/sirko-engine) and
-[sirko client](https://github.com/dnesteryuk/sirko-client) can provide better experience to users.
+It is a simple demo site which shows how the [sirko engine](https://github.com/sirko-io/engine) and
+[sirko client](https://github.com/sirko-io/client) can provide better experience to users.
 
 [Try demo](http://demo.sirko.io)
 
@@ -10,7 +10,6 @@ It is a simple demo site which shows how the [sirko engine](https://github.com/d
 ### Requirements
 
  - Ruby 2.x
- - Node.js
 
 ### Setup
 
@@ -20,24 +19,17 @@ It is a simple demo site which shows how the [sirko engine](https://github.com/d
     $ bundle install
     ```
 
-2. Install JS dependencies:
-
-    ```
-    $ npm install -g bower
-    $ bower install
-    ```
-
-3. Create a `.env` file and define a url to the engine.
+2. Create a `.env` file and define a url to the engine.
 
     ```
     # .env
     SIRKO_ENGINE_URL = http://localhost:4000
     ```
 
-4. Launch the app:
+3. Launch the app:
 
     ```
     $ shotgun
     ```
 
-5. Visit [http://localhost:9393](http://localhost:9393) to see the demo site.
+4. Visit [http://localhost:9393](http://localhost:9393) to see the demo site.

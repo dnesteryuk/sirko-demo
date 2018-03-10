@@ -1,25 +1,10 @@
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script>
   $(function() {
-    /**
-     * the code below shows a predicted path in a link once the sirko client
-     * gets the prediction. Doing that, the user can follow the predicted path
-     * in order to see how the pre-rendering feature is useful.
-     */
-    var printPrediction = function(prediction) {
-      var a = document.getElementById('predicted_path');
-
-      if (prediction) {
-        a.setAttribute('href', prediction);
-        a.innerHTML = prediction;
-      }
-      else {
-        a.innerHTML = 'No prediction for this page';
-      }
-    };
-
     sirko('predicted', function(prediction, isPrevCorrect) {
       printPrediction(prediction);
 
@@ -27,19 +12,8 @@
         console.info('The previous prediction was', isPrevCorrect ? 'correct' : 'incorrect');
       }
       else {
-        console.info('It is a first visit\n or there isn\'t a prediction for the previous request\n or the page got refreshed');
+        console.info('It is a first visit\n or there isn\'t a prediction for the previous request');
       }
-
-       // track correctness of predictions via Mixpanel
-      <% if mixpanel_token %>
-        if (isPrevCorrect !== undefined) {
-          var correctness = isPrevCorrect ? 'correct' : 'incorrect';
-
-          console.info('Send to the mixpanel:', correctness);
-
-          mixpanel.track("sirko-prediction-" + correctness, {prediction: prediction});
-        }
-      <% end %>
     });
   });
 </script>

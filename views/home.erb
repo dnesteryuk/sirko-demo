@@ -3,27 +3,26 @@
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
         <h3>
-          Show how <a href="https://github.com/sirko-io/engine">Sirko Engine</a>
+          This demo shows how <a href="https://github.com/sirko-io/engine">Sirko Engine</a>
           can provide better experience to users by using <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App features</a>
         </h3>
 
         <br>
 
         <h4>
-          This demo site is static, but it tries to pretend that there is some work on the backend and it is dynamic.
+          The site is static, but it tries to pretend that there is some work on the backend and it is dynamic.
 
-          If you follow the given prediction below, you will see the improved page load. Otherwise,
+          If you follow the given prediction in the left box, you will see the improved page load. Otherwise,
           it will take time (0.5-1 sec) to show content to you.
 
           If you want to inspect response time, you can install a <a href="https://chrome.google.com/webstore/detail/page-load-time/fploionmjgeclbkemipmkogoaohcdbig" target="_blank">page load time</a> Chrome extension or open <a href="https://developer.chrome.com/devtools" target="_blank">Dev Tools</a>.
-        </h4>
-        <h4>
-          <b>Before clicking on the link below, give the browser some time (1-2 secs) to perform required actions (prefetch a predicted page and assets for it). Otherwise, you won't see any affect.</b>
+
+          Also, if you go offline, you will see that the site is capable to work offline. The offline feature is also managed by Sirko Engine.
         </h4>
 
-        <h3>
-          Predicted path: <a id="predicted_path">no prediction yet</a>
-        </h3>
+        <% if digitalocean_url %>
+          This demo is hosted by <a href="<%= digitalocean_url %>">DigitalOcean</a>
+        <% end %>
       </div>
     </div>
   </div>
@@ -33,19 +32,19 @@
   <div class="container">
     <div class="row centered">
       <div class="col-md-4">
-        <i class="fa fa-heart-o"></i>
+        <i class="glyphicon glyphicon-heart"></i>
         <h4><%= Faker::HarryPotter.book %></h4>
         <p><%= Faker::HarryPotter.quote %></p>
         <p><%= Faker::HarryPotter.quote %></p>
       </div>
       <div class="col-md-4">
-        <i class="fa fa-flask"></i>
+        <i class="glyphicon glyphicon-star"></i>
         <h4><%= Faker::HeyArnold.character %></h4>
         <p><%= Faker::HeyArnold.quote %></p>
         <p><%= Faker::HeyArnold.quote %></p>
       </div>
       <div class="col-md-4">
-        <i class="fa fa-trophy"></i>
+        <i class="glyphicon glyphicon-grain"></i>
         <h4><%= Faker::StarWars.character %></h4>
         <p><%= Faker::StarWars.quote %></p>
         <p><%= Faker::StarWars.quote %></p>
@@ -63,8 +62,8 @@
 <div class="container mtb">
   <div class="row">
     <div class="col-lg-6">
-      <h4>More About Our Agency.</h4>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+      <h4><%= Faker::Movie.quote %></h4>
+      <p><%= Faker::Lorem.paragraph %></p>
       <p><br/><a href="/about" class="btn btn-theme">More Info</a></p>
     </div>
 

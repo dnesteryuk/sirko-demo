@@ -17,7 +17,7 @@ set :youtube_video_codes, [
   'zbbK0WOvWII'
 ]
 
-set :delays, (5..10).to_a.map{|n| n.to_f / 10}
+set :delays, (2..6).to_a.map{|n| n.to_f / 10}
 
 set :project_imgs, Proc.new { read_imgs('/assets/img/project/') }
 
@@ -60,10 +60,6 @@ helpers do
 
   def ga_tracking_id
     ENV['GA_TRACKING_ID']
-  end
-
-  def mixpanel_token
-    ENV['MIXPANEL_TOKEN']
   end
 end
 

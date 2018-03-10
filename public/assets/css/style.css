@@ -73,12 +73,6 @@ a:focus {
 /*  ################################################################
   BOOTSTRAP MODIFICATIONS & TWEAKS
 ################################################################# */
-.navbar {
-  min-height: 70px;
-  padding-top: 10px;
-  margin-bottom: 0px;
-}
-
 .navbar-brand {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
@@ -199,10 +193,10 @@ a:focus {
   padding-top: 100px;
   padding-bottom: 0px;
   text-align: center;
+  color: white;
 }
 
 #headerwrap h3, #headerwrap h4, #headerwrap h5 {
-  color: white;
   font-weight: 400;
 }
 
@@ -433,4 +427,13 @@ csmall2 {
 .share i {
   padding-right: 15px;
   font-size: 18px;
+}
+
+/* My styles */
+
+div#predicted_pages {
+  position: fixed;
+  max-width: 300px;
+  z-index: 9999;
+  top: 0;
 }
